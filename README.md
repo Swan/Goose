@@ -15,7 +15,7 @@
 * Unmute user command.
 * Prune (@user) command.
 * Send #playerreporting embed command.
-* Say Ccommand.
+* Say command.
 
 **Commands In Depth**
 * `.say (channelId) (Message)` - Fun command for the bot owner to say a message to any channel the bot has access to.
