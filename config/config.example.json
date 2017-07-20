@@ -1,0 +1,17 @@
+{
+    "OWNER_ID": "",
+    "BOT_TOKEN": "",
+    "DEFAULT_STATUS": "dnd",
+    "PLAYING_GAME": "github.com/swan",
+    "COMMAND_PREFIX": ".",
+    "WEBSOCKET": "wss://api.ripple.moe/api/v1/ws",
+    "channels": {
+        "GENERAL": "",
+        "PLAYER_REPORTING": "",
+        "REPORTS": "",
+        "CHEATERS": ""
+    },
+    "roles": {
+        "MUTED": ""
+    }
+}
