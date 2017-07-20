@@ -1,5 +1,5 @@
 # Goose
-Goose is a Discord bot that was made specifically for the [Ripple](https://ripple.moe) Discord server. It is a fairly basic bot but written with scalability in mind. 
+>Goose is a Discord bot that was made specifically for the [Ripple](https://ripple.moe) Discord server. It is a fairly basic bot but written (for the 4th time) with scalability in mind. 
 
 **Currently its features consist of:**
 
