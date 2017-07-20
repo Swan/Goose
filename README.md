@@ -26,3 +26,13 @@
 * `.ban / .b` - Bans a user from the server.
 * `.prune / .purge / .p (@user) (amount)` - Mass deletes x amount of messages from a channel, or a user.
 
+# Setup
+To setup the bot for yourself, you'll have to do quite a bit of stuff, but I've made it easy so anyone can run it.
+
+* You'll need the babel-cli to run this, so run `$ sudo npm install -g babel-cli babel-preset-env`
+* Install all of the dependencies needed for the bot by running `$ npm install`
+* Create a config.json file with the [example](https://github.com/Swan/Goose/blob/master/config/config.example.json).
+* If running on a linux machine, run `chmod +x start.sh`
+* To start the bot, run `$ ./start.sh`
+* If using [pm2](https://github.com/Unitech/pm2), you can also run `$ pm2 start ./start.sh --name Goose` instead
+* Otherwise just run `$ npm start`.
