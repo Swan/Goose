@@ -1,29 +1,19 @@
-/*
- * The purpose of this file is to provide a command
- * for administrators to prune messages. Whether it be 
- * from the chat itself, or from a given user. We'll be
- * able to specify the amount of messages as well.
- */
-export async function pruneMessages(client, message, args) {
+import * as Discord from 'discord.js';
+
+// Responsible for pruning messages in a given channel.
+// Usage: .p/prune/purge 10
+// Usage: .p/prune/purge @Swan 20
+export async function pruneMessages(client: Discord.Client, message: Discord.Message, args: string[]) {
     try {
-        /*
-         *  Don't bother runnign the command if the message sender
-         * doesn't have the ability themselves to delete messages.
-         */
         if (!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return;
 
-        const NUM_NOT_SPECIFIED = 'You must specify the amount of messages you would like to prune.';
+        const NUM_NOT_SPECIFIED: string = 'You must specify the amount of messages you would like to prune.';
 
-        if (args.length < 1) 
-            return await message.reply(NUM_NOT_SPECIFIED);
+        if (args.length < 1) return await message.reply(NUM_NOT_SPECIFIED);
 
-        /*
-        * If no user was mentioned, we'll assume that the message sender
-        * wants to prune messages from all users in the chat.
-        * AKA, Delete mass spam.
-        */
+        // If no users were mentioned, we'll prune messages from everyone in the entire chat.
         if (message.mentions.users.size == 0) {
-            const numMessagesToDelete = args[0];
+            const numMessagesToDelete: any = args[0];
 
             if (isNaN(numMessagesToDelete)) 
                 return await message.reply(NUM_NOT_SPECIFIED);
@@ -31,18 +21,16 @@ export async function pruneMessages(client, message, args) {
             if (numMessagesToDelete < 2 || numMessagesToDelete > 100)
                 return await message.reply("You can only prune between 2 and 100 messages at a time.");
 
-            return await message.channel.bulkDelete(parseInt(numMessagesToDelete));
+            return await message.channel.bulkDelete(parseInt(numMessagesToDelete) + 1);
         }
 
-        /*
-         * If a user WAS mentioned, then only delete their messages.
-         */
+        // If a user was mentioned however, we'll delete messages fom only that user. 
         if (message.mentions.users.size > 0) {
-            const target = message.guild.member(message.mentions.users.first());
+            const target: Discord.GuildMember = message.guild.member(message.mentions.users.first());
             if (!target)
                 return await message.reply("The user you are trying to prune isn't valid.");
 
-            const numMessagesToDelete = args[1];
+            const numMessagesToDelete: any = args[1];
             if (isNaN(numMessagesToDelete))
                 return await message.reply(NUM_NOT_SPECIFIED);
 
@@ -50,10 +38,10 @@ export async function pruneMessages(client, message, args) {
              * Fetch all of the channel's messages and map over them to find and 
              * delete messages by the specific user.
              */
-            let channelMessages = await message.channel.fetchMessages();
+            let channelMessages: any = await message.channel.fetchMessages();
             channelMessages = channelMessages.array();
 
-            let targetMessages = channelMessages.filter((channelMessage) => {
+            let targetMessages: Discord.Message[] = channelMessages.filter((channelMessage) => {
                 if (channelMessage.author.id == target.id) return channelMessage;
             });
 

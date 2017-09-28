@@ -1,17 +1,12 @@
-/* 
- * The purpose of this file is to setup a command that will send information about
- * how to report players in the #playerreporting channel of the discord.
- * This message SHOULD be the only one in the channel, as all newer messages
- * will be deleted and dumped into a private channel.
- */
-import { RichEmbed } from 'discord.js';
-import * as config from '../config/config.json';
+import * as Discord from 'discord.js';
+const config = require('../config/config.json');
 
-export async function sendPlayerReportingEmbed(client, message, args) {
+// Responsible for sending the #playerreporting embedded message
+export async function sendPlayerReportingEmbed(client: Discord.Client, message: Discord.Message, args: string[]) {
     try {
-        if (message.author.id != config.OWNER_ID) return;
+        if (message.author.id != config.ownerId) return;
 
-        const embed = getPlayerReportingEmbed();
+        const embed: Discord.RichEmbed = getPlayerReportingEmbed();
         return await message.channel.sendEmbed(embed);
 
     } catch(err) {
@@ -20,14 +15,12 @@ export async function sendPlayerReportingEmbed(client, message, args) {
     }
 }
 
-/* 
- * This function's purpose is to solely return the RichEmbed that will be sent in the channel.
- */
+// Returns the embedded message that'll be sent in the channel.
 const getPlayerReportingEmbed = () => {
-    const embeddedMessage = new RichEmbed()
+    return new Discord.RichEmbed()
         .setTitle('Welcome To The Player Reporting Channel!')
         .setColor(0xDB88C2)
-        .setThumbnail('https://suck.eggplants.org/7kw3b4.png')
+        .setThumbnail('https://eggplants.org/7kw3b4.png')
         .setTimestamp()
         .addField('Information', "**PLEASE READ EVERYTHING TO AVOID GETTING SILENCED!!!**\n\n"+
                                  "• Welcome to the #playerreporting channel. Here, you can report players you suspect of rule breaking.", true)
@@ -39,6 +32,4 @@ const getPlayerReportingEmbed = () => {
                                     "```Player's Username:\n\n"+
                                     "Link To Player's Profile:\n\nReason For Reporting (Cheating, Multi-Accouting, Etc.):\n\n"+
                                     "Any Evidence You Might Have (Suspicious Plays, Videos, Screenshots, Etc.):```", true);
-
-    return embeddedMessage;
 };
