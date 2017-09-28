@@ -1,6 +1,5 @@
 import * as Discord from 'discord.js';
 const config = require('./config/config.json');
-
 import { pruneMessages } from './commands/prune';
 import { kickMember } from './commands/kick';
 import { sendPlayerReportingEmbed } from './commands/pr';
