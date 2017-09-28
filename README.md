@@ -1,5 +1,5 @@
 # Goose
-Goose is a Discord bot that was made specifically for the [Ripple](https://ripple.moe) Discord server.
+Goose is a Discord bot that was made specifically for the [Ripple](https://ripple.moe) Discord server. This version of Goose is only part of the entire bot, but it contains most of its core features.
 
 **Currently its features consist of:**
 
@@ -9,7 +9,12 @@ Goose is a Discord bot that was made specifically for the [Ripple](https://rippl
 * Automatically pinning reports from users (in a private channel).
 * Connection to the Ripple WebSocket to track user scores.
 * Alerting a private channel if there are "suspicious" (High PP) scores. 
-* Some neat commands
+* Some neat administrative commands.
+
+# Requirements
+* NPM/Node.js v7.0+
+* TypeScript Compiler
+* MongoDB
 
 # Commands
 Below is a list of all the commands this version of Goose has
@@ -24,19 +29,14 @@ Below is a list of all the commands this version of Goose has
 | **.p/.prune/.purge** | Deletes messages in bulk from either the entire chat or a given user | MANAGE_MESSAGES | .prune 10 **OR** .prune @Swan 5 |
 | **.f/.filter** | Deletes messages if they contain a certain keyword | MANAGE_MESSAGES | .filter stupid |
 
-# Requirements
-* NPM/Node.js v7.0+
-* TypeScript Compiler
-* MongoDB
-
 # Setup
 To setup the bot for yourself, you'll have to do quite a bit of stuff, but I've made it easy so anyone can run it.
 
 * You'll need the TypeScript compiler. `npm install -g typescript`
 * Compile the project by running `tsc`
 * Install the dependencies for the project by running `npm install`
-* Create a copy of [config.example.json]() named config.json, and fill in the appropriate details.
+* Create a copy of [config.example.json](https://github.com/Swan/Goose/blob/master/config/config.example.json) named config.json, and fill in the appropriate details.
 * Run the bot by running `node index.js` or `npm start`
 
 # LICENSE 
-MIT
+[MIT](https://github.com/Swan/Goose/blob/master/README.md)
