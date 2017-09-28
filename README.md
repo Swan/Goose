@@ -39,4 +39,4 @@ To setup the bot for yourself, you'll have to do quite a bit of stuff, but I've 
 * Run the bot by running `node index.js` or `npm start`
 
 # LICENSE 
-[MIT](https://github.com/Swan/Goose/blob/master/README.md)
+[MIT](https://github.com/Swan/Goose/blob/master/LICENSE)
