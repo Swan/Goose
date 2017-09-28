@@ -15,7 +15,7 @@ Goose is a Discord bot that was made specifically for the [Ripple](https://rippl
 Below is a list of all the commands this version of Goose has
 
 | Command | Description | Permission Required | Usage |
-| --- | --- | --- |
+| --- | --- | --- | --- |
 | **.pr/.playerreporting** | Sends an embedded message with information regarding player reports | OWNER | .pr |
 | **.k/.kick**| Kicks a mentioned user from the server | KICK_MEMBERS | .kick @Swan |
 | **.m/.mute** | Mutes a mentioned user from text/voice chat - either timed or forever | MUTE_MEMBERS | .m @Swan **OR** .mute @Swan 10 m Spamming |
