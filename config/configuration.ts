@@ -1,6 +1,6 @@
 import * as Discord from 'discord.js';
 import { connectToWebSocket } from './websocket';
-import { checkUnmuteTime } from '../checkunmute';
+import { checkUnmuteTime } from '../src/checkunmute';
 const config = require('./config.json');
 const mongoose = require('mongoose');
 

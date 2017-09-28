@@ -1,9 +1,9 @@
 import * as Discord from 'discord.js';
 import * as configuration from './config/configuration';
 import * as commands from './/commands';
-import { dumpReport } from './report';
-import { pinReport } from './pin';
-import { sayJoinMessage, sayLeaveMessage } from './arrival';
+import { dumpReport } from './src/report';
+import { pinReport } from './src/pin';
+import { sayJoinMessage, sayLeaveMessage } from './src/arrival';
 
 const client: Discord.Client = new Discord.Client();
 

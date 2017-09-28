@@ -1,6 +1,6 @@
 import * as Discord from 'discord.js';
-import { Mode } from '../mode';
-import * as suspicious from '../suspicious';
+import { Mode } from '../enums/mode';
+import * as suspicious from '../src/suspicious';
 const config = require('./config.json');
 const WebSocket = require('ws');
 
